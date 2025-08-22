@@ -14,30 +14,32 @@ public class App
 	// to manage the relationship.
 	
 	// But if we use @OneToOne or @ManyToOne and properly map the relationship (with mappedBy on one side),
-	// then Hibernate will simply add a foreign key column (e.g., laptop_id in student table) 
+	// then Hibernate will simply add a foreign key column (e.g.,  student_rollno in laptop table) 
 	// instead of creating a separate join table.
+	
+	// Two tables are created in this ,,, student and laptop
 
 	
     public static void main( String[] args )
     {
     	// Create Laptop object
-        laptop laptop1 = new laptop();
+        Laptop laptop1 = new Laptop();
         laptop1.setLid(101);
         laptop1.setLname("Dell");
 
         // Create Student object
-        student anshul = new student();
+        Student anshul = new Student();
         anshul.setRollno(1);
         anshul.setSname("Anshul");
         anshul.setMarks(88);
-        // Associate student with laptop (Adding the laptop into ArrayList)
+        // Associate Student with Laptop (Adding the Laptop into ArrayList)
         anshul.getLaptops().add(laptop1);
 
         // Hibernate Configuration
         Configuration con = new Configuration();
 
         con.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
-        con.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5433/HibernateTest2");
+        con.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5433/HibernateTest3");
         con.setProperty("hibernate.connection.username", "postgres");
         con.setProperty("hibernate.connection.password", "Anshul@667");
 
@@ -47,8 +49,8 @@ public class App
         con.setProperty("hibernate.format_sql", "true");
 
         // Register entity classes
-        con.addAnnotatedClass(student.class);
-        con.addAnnotatedClass(laptop.class);
+        con.addAnnotatedClass(Student.class);
+        con.addAnnotatedClass(Laptop.class);
 
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();

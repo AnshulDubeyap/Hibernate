@@ -22,6 +22,21 @@ public class App {
         anshul.setAid(101);
         anshul.setAname("Bobby");
         anshul.setAcolor("Orange");
+        
+        Alien jimmy = new Alien();
+        jimmy.setAid(102);
+        jimmy.setAname("Jimmy");
+        jimmy.setAcolor("Pink");
+        
+        Alien cambam = new Alien();
+        cambam.setAid(103);
+        cambam.setAname("Cam");
+        cambam.setAcolor("Blue");
+        
+        Alien joel = new Alien();
+        joel.setAid(104);
+        joel.setAname("Joel");
+        joel.setAcolor("Green");
 
         // Step-4 --> Create a Configuration object (this class is used to setup Hibernate)
         Configuration con = new Configuration();
@@ -57,7 +72,9 @@ public class App {
 
         // Use persist() to save the Alien object into the PostgreSQL database
         session.persist(anshul);
-
+        session.persist(jimmy);
+        session.persist(joel);
+        session.persist(cambam);
         // Commit the transaction so that changes are saved permanently
         tx.commit();
 

@@ -4,9 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class laptop {
+public class Laptop {
 	
-	// Laptop dont know about Student, any query on laptop will work for laptop only
+	// Laptop dont know about Student, any query on Laptop will work for Laptop only
 	
 	@Id
 	private int lid;

@@ -5,9 +5,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class laptop {
+public class Laptop {
 	
-	// Quesry of laptop will always fetch laptop
+	// Quesry of Laptop will always fetch Laptop
 	
 		@Id
 		private int lid;
@@ -15,16 +15,16 @@ public class laptop {
 		
 		@ManyToOne
 		// a Laptop can have one Student
-		private student student;
+		private Student Student;
 		
-		// This will not create a extra table,,,student_laptop, because mapping is done in laptop only
+		// This will not create a extra table,,,student_laptop, because mapping is done in Laptop only
 		
 		
-		public student getStudent() {
-			return student;
+		public Student getStudent() {
+			return Student;
 		}
-		public void setStudent(student student) {
-			this.student = student;
+		public void setStudent(Student Student) {
+			this.Student = Student;
 		}
 		public int getLid() {
 			return lid;

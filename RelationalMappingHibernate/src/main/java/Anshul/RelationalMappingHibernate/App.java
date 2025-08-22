@@ -6,19 +6,22 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class App {
+	
+	// This creates two tables Laptop and Student
+	
     public static void main(String[] args) {
 
         // Create Laptop object
-        laptop laptop1 = new laptop();
+        Laptop laptop1 = new Laptop();
         laptop1.setLid(101);
         laptop1.setLname("Dell");
 
         // Create Student object
-        student anshul = new student();
+        Student anshul = new Student();
         anshul.setRollno(1);
         anshul.setSname("Anshul");
         anshul.setMarks(88);
-        // Associate student with laptop
+        // Associate Student with Laptop
         anshul.setLaptop(laptop1);
 
         // Hibernate Configuration
@@ -35,8 +38,8 @@ public class App {
         con.setProperty("hibernate.format_sql", "true");
 
         // Register entity classes
-        con.addAnnotatedClass(student.class);
-        con.addAnnotatedClass(laptop.class);
+        con.addAnnotatedClass(Student.class);
+        con.addAnnotatedClass(Laptop.class);
 
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();

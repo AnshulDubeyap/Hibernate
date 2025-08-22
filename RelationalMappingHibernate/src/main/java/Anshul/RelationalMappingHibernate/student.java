@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
 @Entity
-public class student {
+public class Student {
 	
 	@Id
 	private int rollno;
@@ -13,15 +13,15 @@ public class student {
 	private int marks;
 	
 	@OneToOne
-	// Every student must have a laptop (one student have obe laptop)
-	private laptop laptop;
+	// Every Student must have a Laptop (one Student have obe Laptop)
+	private Laptop Laptop;
 	
 	
-	public laptop getLaptop() {
-		return laptop;
+	public Laptop getLaptop() {
+		return Laptop;
 	}
-	public void setLaptop(laptop laptop) {
-		this.laptop = laptop;
+	public void setLaptop(Laptop Laptop) {
+		this.Laptop = Laptop;
 	}
 	public int getRollno() {
 		return rollno;

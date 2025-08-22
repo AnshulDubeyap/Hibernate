@@ -8,25 +8,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class student {
+public class Student {
 
     @Id
     private int rollno;
     private String sname;
     private int marks;
 
-    @OneToMany(mappedBy = "student")
-    // One student can own many laptops.
+    @OneToMany(mappedBy = "Student")
+    // One Student can own many Laptops.
     // The 'mappedBy' tells Hibernate that the relationship is managed 
-    // on the 'student' field inside the Laptop entity, so it won't 
+    // on the 'Student' field inside the Laptop entity, so it won't 
     // create a separate join table.
-    private List<laptop> laptops = new ArrayList<>();
+    private List<Laptop> Laptops = new ArrayList<>();
 
-    public List<laptop> getLaptops() {
-        return laptops;
+    public List<Laptop> getLaptops() {
+        return Laptops;
     }
-    public void setLaptops(List<laptop> laptops) {
-        this.laptops = laptops;
+    public void setLaptops(List<Laptop> Laptops) {
+        this.Laptops = Laptops;
     }
     public int getRollno() {
         return rollno;
